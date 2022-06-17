@@ -1,0 +1,19 @@
+package routes
+
+import (
+	"github.com/gofiber/fiber/v2"
+	"github.com/kublick/goadmin/controllers"
+	"github.com/kublick/goadmin/middleware"
+)
+
+func Setup(app *fiber.App) {
+	app.Post("/api/register", controllers.Register)
+	app.Post("/api/login", controllers.Login)
+
+	app.Use(middleware.IsAuthenticated)
+	// Will require auth
+	app.Get("/api/user", controllers.User)
+	app.Post("/api/logout", controllers.Logout)
+	app.Get("/api/users", controllers.AllUsers)
+	app.Post("/api/users", controllers.CreateUser)
+}
