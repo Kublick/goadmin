@@ -2,3 +2,4 @@ goadmin
 .air
 tmp/
 tmp/main
+tmp/build*.*
