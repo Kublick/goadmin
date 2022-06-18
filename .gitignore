@@ -1,3 +1,4 @@
 goadmin
 .air
-tmp/*.*
+tmp/
+tmp/main
